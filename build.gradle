@@ -24,8 +24,8 @@ tasks.withType(JavaCompile) {
 }
 
 application {
-    mainModule = 'com.sharko.deeplome'
-    mainClass = 'com.sharko.deeplome.HelloApplication'
+    mainModule = 'com.deeplome'
+    mainClass = 'com.deeplome.HelloApplication'
 }
 
 javafx {
@@ -43,6 +43,10 @@ dependencies {
     implementation('eu.hansolo:tilesfx:11.48') {
         exclude(group: 'org.openjfx')
     }
+    implementation('org.projectlombok:lombok:1.18.24')
+    implementation('org.springframework:spring-jdbc:5.3.20')
+    implementation('org.postgresql:postgresql:42.3.4')
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.6.7'
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
