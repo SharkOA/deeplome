@@ -15,6 +15,8 @@ module com.sharko.deeplome {
     requires spring.data.commons;
     requires spring.jdbc;
     requires java.sql;
+    requires org.postgresql.jdbc;
+    requires java.desktop;
 
     opens com.deeplome to javafx.fxml;
     exports com.deeplome;
