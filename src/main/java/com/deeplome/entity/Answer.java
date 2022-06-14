@@ -1,45 +1,66 @@
 package com.deeplome.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-//@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
-@Entity
-@Table(name = "answers")
 public class Answer {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private int id;
-
-    @Column(name = "is_correct")
     private boolean isCorrect;
-
     private byte[] image;
-
     private String text;
+    private int testId;
 
-//    @ManyToOne
-//    @JoinColumn(name = "test_id")
-    private int test;
+    public int getId() {
+        return id;
+    }
 
-    public Answer(int id, boolean isCorrect, byte[] image, String text, int test) {
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public boolean isCorrect() {
+        return isCorrect;
+    }
+
+    public void setCorrect(boolean correct) {
+        isCorrect = correct;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public int getTestId() {
+        return testId;
+    }
+
+    public void setTestId(int testId) {
+        this.testId = testId;
+    }
+
+    public Answer() {
+    }
+
+    public Answer(int id, boolean isCorrect, byte[] image, String text, int testId) {
         this.id = id;
         this.isCorrect = isCorrect;
         this.image = image;
         this.text = text;
-        this.test = test;
+        this.testId = testId;
     }
 }
